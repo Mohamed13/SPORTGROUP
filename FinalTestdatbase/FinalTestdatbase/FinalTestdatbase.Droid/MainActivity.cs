@@ -16,7 +16,7 @@ namespace FinalTestdatbase.Droid
 	public class MainActivity : Activity
 	{
         private EditText editText1, editText2;
-        private Button button1, button2, button3; 
+        private Button button1, button2, button3, buttonregister; 
         private TextView textView3, textView4, textView5, textView6;
         
 
@@ -32,6 +32,7 @@ namespace FinalTestdatbase.Droid
             button1 = FindViewById<Button>(Resource.Id.button1);
             button2 = FindViewById<Button>(Resource.Id.button2);
             button3 = FindViewById<Button>(Resource.Id.button3);
+            buttonregister = FindViewById<Button>(Resource.Id.buttonregister);
             textView3 = FindViewById<TextView>(Resource.Id.textView3);
             textView4 = FindViewById<TextView>(Resource.Id.textView4);
             textView5 = FindViewById<TextView>(Resource.Id.textView5);
@@ -40,8 +41,13 @@ namespace FinalTestdatbase.Droid
             string var2 = FindViewById<EditText>(Resource.Id.editText2).Text;
 
             button1.Click += button1_Click;
-            button2.Click += button2_Click;
             button3.Click += button3_Click;
+            buttonregister.Click += Button_Click;
+        }
+
+        private void Button_Click(object sender, EventArgs e)
+        {
+            StartActivity(typeof(Register));
         }
 
         MySqlConnection con = new MySqlConnection("Server=sql7.freemysqlhosting.net;Port=3306;database=sql7147202; User Id=sql7147202;Password=TQ13I75cK3;");
@@ -63,23 +69,9 @@ namespace FinalTestdatbase.Droid
             catch(MySqlException ex)
             {
                 textView3.Text = ex.ToString();
-            } finally
-            {
-                
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
-        {
-
-            string query = "INSERT INTO members (id,user,password) VALUES ('','" + editText1.Text + "','" + editText2.Text + "');";
-            MySqlCommand cmd = new MySqlCommand(query, con);
-            cmd.ExecuteNonQuery();
-
-            
-
-
-        }
 
         private void button3_Click(object sender, EventArgs e)
         {
@@ -97,8 +89,7 @@ namespace FinalTestdatbase.Droid
                 textView5.Text = "Aucun compte existant !";
                 reader.Close();
             }
-
-
+            reader.Close();
         }
     }
 }
