@@ -11,12 +11,17 @@ using MySql.Data.MySqlClient;
 
 
 namespace FinalTestdatbase.Droid
+
+
 {
-	[Activity (Label = "FinalTestdatbase.Droid", MainLauncher = true, Icon = "@drawable/icon")]
+
+    [Activity(Theme = "@android:style/Theme.Material.Light",
+          Label = "MyApp", MainLauncher = true, Icon = "@drawable/icon")]
+    // [Activity (Label = "FinalTestdatbase.Droid", MainLauncher = true, Icon = "@drawable/icon")]
 	public class MainActivity : Activity
 	{
         private EditText editText1, editText2;
-        private Button button1, button2, button3, buttonregister; 
+        private Button button1, button3, buttonregister; 
         private TextView textView3, textView4, textView5, textView6;
         
 
@@ -30,7 +35,7 @@ namespace FinalTestdatbase.Droid
             editText1 = FindViewById<EditText>(Resource.Id.editText1);
             editText2 = FindViewById<EditText>(Resource.Id.editText2);
             button1 = FindViewById<Button>(Resource.Id.button1);
-            button2 = FindViewById<Button>(Resource.Id.button2);
+            
             button3 = FindViewById<Button>(Resource.Id.button3);
             buttonregister = FindViewById<Button>(Resource.Id.buttonregister);
             textView3 = FindViewById<TextView>(Resource.Id.textView3);
@@ -84,6 +89,7 @@ namespace FinalTestdatbase.Droid
                 textView5.Text = (reader["user"].ToString());
                 textView6.Text = (reader["password"].ToString());
                 reader.Close();
+                StartActivity(typeof(Home));
             } else
             {
                 textView5.Text = "Aucun compte existant !";
