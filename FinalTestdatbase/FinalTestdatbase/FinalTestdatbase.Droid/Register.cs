@@ -40,7 +40,7 @@ namespace FinalTestdatbase.Droid
         private void register_Click(object sender, EventArgs e)
         {
 
-            MySqlConnection con2 = new MySqlConnection("Server=sql7.freemysqlhosting.net;Port=3306;database=sql7147202; User Id=sql7147202;Password=TQ13I75cK3;");
+            MySqlConnection con2 = new MySqlConnection("Server=sql7.freemysqlhosting.net;Port=3306;database=sql7148210; User Id=sql7148210;Password=msvYc7aw45;");
 
             try
             {
