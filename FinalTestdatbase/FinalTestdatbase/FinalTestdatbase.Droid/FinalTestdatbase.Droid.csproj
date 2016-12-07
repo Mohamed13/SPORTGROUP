@@ -53,6 +53,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EventCreation.cs" />
     <Compile Include="Home.cs" />
     <Compile Include="Register.cs" />
     <Compile Include="MainActivity.cs" />
@@ -67,6 +68,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\Home.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\EventCreation.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

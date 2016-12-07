@@ -57,7 +57,6 @@ namespace FinalTestdatbase.Droid
 
         MySqlConnection con = new MySqlConnection("Server=sql7.freemysqlhosting.net;Port=3306;database=sql7148210; User Id=sql7148210;Password=msvYc7aw45;");
         
-        
         private void button1_Click(object sender, EventArgs e)
         {
             try
