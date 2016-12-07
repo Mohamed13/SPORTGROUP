@@ -12,7 +12,6 @@ using MySql.Data.MySqlClient;
 
 namespace FinalTestdatbase.Droid
 
-
 {
 
     [Activity(Theme = "@android:style/Theme.Material.Light",
@@ -24,7 +23,6 @@ namespace FinalTestdatbase.Droid
         private Button button1, button3, buttonregister; 
         private TextView textView3, textView4, textView5, textView6;
         
-
         protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
@@ -57,7 +55,6 @@ namespace FinalTestdatbase.Droid
 
         MySqlConnection con = new MySqlConnection("Server=sql7.freemysqlhosting.net;Port=3306;database=sql7147202; User Id=sql7147202;Password=TQ13I75cK3;");
         
-        
         private void button1_Click(object sender, EventArgs e)
         {
             try
@@ -65,8 +62,7 @@ namespace FinalTestdatbase.Droid
                 if (con.State == ConnectionState.Closed)
                 {
                     con.Open();
-                    textView3.Text = "Successfully connected";
-                    
+                    textView3.Text = "Successfully connected"; 
                 } else {
                     textView4.Text = "Connexion déjà établi";
                 }
@@ -76,7 +72,6 @@ namespace FinalTestdatbase.Droid
                 textView3.Text = ex.ToString();
             }
         }
-
 
         private void button3_Click(object sender, EventArgs e)
         {
