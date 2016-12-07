@@ -2,5 +2,6 @@
 <resources>
 	<string name="hello">Hello World, Click Me!</string>
 	<string name="app_name">FinalTestdatbase.Droid</string>
-
+  <string name="event_crea_title">Création d\'événement</string>
+  <string name="event_crea_name">Nom de l\'événement</string>
 </resources>
