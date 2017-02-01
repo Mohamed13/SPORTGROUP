@@ -52,12 +52,6 @@ namespace FinalTestdatbase.Droid
         {
             StartActivity(typeof(Register));
         }
-
-<<<<<<< HEAD
-        MySqlConnection con = new MySqlConnection("Server=sql7.freemysqlhosting.net;Port=3306;database=sql7147202; User Id=sql7147202;Password=TQ13I75cK3;");
-=======
-        MySqlConnection con = new MySqlConnection("Server=sql7.freemysqlhosting.net;Port=3306;database=sql7148210; User Id=sql7148210;Password=msvYc7aw45;");
->>>>>>> origin/master
         
         private void button1_Click(object sender, EventArgs e)
         {
@@ -95,6 +89,14 @@ namespace FinalTestdatbase.Droid
                 reader.Close();
             }
             reader.Close();
+        }
+
+        public override bool OnCreateOptionsMenu(IMenu menu)
+        {
+
+            MenuInflater.Inflate(Resource.Menu.option_menu, menu);
+            return true;
+
         }
     }
 }
