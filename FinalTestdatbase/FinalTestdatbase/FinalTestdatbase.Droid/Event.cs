@@ -32,7 +32,7 @@ namespace FinalTestdatbase.Droid
             MySqlConnection con = new MySqlConnection("Server=cl1-sql22.phpnet.org;Port=3306;database=yzi38822; User Id=yzi38822;Password=M0kTZX33pyO6;");
             
 
-            string queryEvenementsTrue = "SELECT * FROM evenements WHERE status='1'";
+            string queryEvenementsTrue = "SELECT * FROM evenements WHERE status='true'";
             MySqlDataReader reader = new MySqlCommand(queryEvenementsTrue, con).ExecuteReader();
             con.Open();
             if (reader.Read())
