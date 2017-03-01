@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 using Android.App;
 using Android.Content;
@@ -17,86 +18,62 @@ namespace FinalTestdatbase.Droid
     [Activity(Theme = "@android:style/Theme.Material.Light",
           Label = "MyApp", MainLauncher = true, Icon = "@drawable/icon")]
     // [Activity (Label = "FinalTestdatbase.Droid", MainLauncher = true, Icon = "@drawable/icon")]
-	public class MainActivity : Activity
-	{
-        private EditText editText1, editText2;
-        private Button button1, button3, buttonregister; 
-        private TextView textView3, textView4, textView5, textView6;
+    public class MainActivity : Activity
+    {
+        UserSessionManagement session = new UserSessionManagement();
+        public Button button1;
+        private TextView textview1, textview2;
         
-        protected override void OnCreate (Bundle bundle)
-		{
-			base.OnCreate (bundle);
 
-			// Set our view from the "main" layout resource
-			SetContentView (Resource.Layout.Main);
-
-            editText1 = FindViewById<EditText>(Resource.Id.editText1);
-            editText2 = FindViewById<EditText>(Resource.Id.editText2);
-            button1 = FindViewById<Button>(Resource.Id.button1);
+        protected override void OnCreate(Bundle bundle)
+        {
             
-            button3 = FindViewById<Button>(Resource.Id.button3);
-            buttonregister = FindViewById<Button>(Resource.Id.buttonregister);
-            textView3 = FindViewById<TextView>(Resource.Id.textView3);
-            textView4 = FindViewById<TextView>(Resource.Id.textView4);
-            textView5 = FindViewById<TextView>(Resource.Id.textView5);
-            textView6 = FindViewById<TextView>(Resource.Id.textView6);
-            string var1 = FindViewById<EditText>(Resource.Id.editText1).Text;
-            string var2 = FindViewById<EditText>(Resource.Id.editText2).Text;
+            base.OnCreate (bundle);
+            SetContentView(Resource.Layout.Home);
+            session = new UserSessionManagement(Application.Context);
 
-            button1.Click += button1_Click;
-            button3.Click += button3_Click;
-            buttonregister.Click += Button_Click;
-        }
+            button1 = FindViewById<Button>(Resource.Id.connect);
+            textview1 = FindViewById<TextView>(Resource.Id.TextView1);
+            textview2 = FindViewById<TextView>(Resource.Id.textView2);
 
-        private void Button_Click(object sender, EventArgs e)
-        {
-            StartActivity(typeof(Register));
-        }
-        
-        private void button1_Click(object sender, EventArgs e)
-        {
-            try
+            button1.Click += Button1_Click;
+            
+
+            if (session.checkLogin())
+                Finish();
+
+            Dictionary<string, string> user = session.getUserDetails();
+
+            string name = user[UserSessionManagement.KEY_NAME];
+            string email = user[UserSessionManagement.KEY_EMAIL];
+
+            MySqlConnection con = new MySqlConnection("Server=cl1-sql22.phpnet.org;Port=3306;database=yzi38822; User Id=yzi38822;Password=M0kTZX33pyO6;");
+
+            if (con.State == ConnectionState.Closed)
             {
-                if (con.State == ConnectionState.Closed)
-                {
-                    con.Open();
-                    textView3.Text = "Successfully connected"; 
-                } else {
-                    textView4.Text = "Connexion déjà établi";
-                }
-            } 
-            catch(MySqlException ex)
-            {
-                textView3.Text = ex.ToString();
+                con.Open();
             }
-        }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            string query = "SELECT user,password FROM members WHERE user = '" + editText1.Text + "' and password = '" + editText2.Text + "'";
+            string query = "SELECT user,password FROM members WHERE user = '" + name + "'";
 
             MySqlDataReader reader = new MySqlCommand(query, con).ExecuteReader();
 
             if (reader.Read())
             {
-                textView5.Text = (reader["user"].ToString());
-                textView6.Text = (reader["password"].ToString());
-                reader.Close();
-                StartActivity(typeof(Home));
-            } else
+                new AlertDialog.Builder(this)
+                .SetMessage("Bienvenue " + (reader["user"].ToString()))
+                .Show();
+                StartActivity(typeof(Profil));
+            }
+            else
             {
-                textView5.Text = "Aucun compte existant !";
                 reader.Close();
             }
-            reader.Close();
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
+        private void Button1_Click(object sender, EventArgs e)
         {
-
-            MenuInflater.Inflate(Resource.Menu.option_menu, menu);
-            return true;
-
+            StartActivity(typeof(Home));
         }
     }
 }

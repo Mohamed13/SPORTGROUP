@@ -4,4 +4,16 @@
 	<string name="app_name">FinalTestdatbase.Droid</string>
   <string name="event_crea_title">Création d\'événement</string>
   <string name="event_crea_name">Nom de l\'événement</string>
+
+  <string-array name="sport">
+    <item>Football</item>
+    <item>Basket</item>
+    <item>Handball</item>
+    <item>Danse</item>
+    <item>Rugby</item>
+    <item>Jogging</item>
+    <item>Boxe</item>
+    <item>Natation</item>
+  </string-array>
+
 </resources>

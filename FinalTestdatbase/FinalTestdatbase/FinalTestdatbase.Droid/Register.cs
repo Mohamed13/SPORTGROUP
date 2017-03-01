@@ -17,9 +17,10 @@ namespace FinalTestdatbase.Droid
     [Activity(Label = "Activity1")]
     public class Register : Activity
     {
-        private EditText user, password;
+        public EditText user, password, passwordconfirmation;
         private TextView result;
         private Button register, buttonconnexion;
+        UserSessionManagement session = new UserSessionManagement();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -31,6 +32,9 @@ namespace FinalTestdatbase.Droid
             register = FindViewById<Button>(Resource.Id.register);
             buttonconnexion = FindViewById<Button>(Resource.Id.buttonconnexion);
             result = FindViewById<TextView>(Resource.Id.result);
+            passwordconfirmation = FindViewById<EditText>(Resource.Id.passwordconfirmation);
+
+            session = new UserSessionManagement(Application.Context);
 
             register.Click += register_Click;
             buttonconnexion.Click += buttonconnexion_Click;
@@ -40,39 +44,45 @@ namespace FinalTestdatbase.Droid
         private void register_Click(object sender, EventArgs e)
         {
 
-            MySqlConnection con2 = new MySqlConnection("Server=sql7.freemysqlhosting.net;Port=3306;database=sql7148210; User Id=sql7148210;Password=msvYc7aw45;");
+            MySqlConnection con2 = new MySqlConnection("Server=cl1-sql22.phpnet.org;Port=3306;database=yzi38822; User Id=yzi38822;Password=M0kTZX33pyO6;");
 
-            try
-            {
-                if (con2.State == ConnectionState.Closed)
-                {
                     con2.Open();
-                }
-            }
-            catch (MySqlException ex)
-            {
-                result.Text = ex.ToString();
-            }
-         
+                   
+
             string chercheruser = "SELECT user,password FROM members WHERE user = '" + user.Text + "'";
             MySqlDataReader reader2 = new MySqlCommand(chercheruser, con2).ExecuteReader();
 
-            if (reader2.Read())
+            if (password.Text.Length < 3)
             {
-                result.Text = "Ce nom d'utilisateur existe déjà";
-                reader2.Close();
+                result.Text = "Le mot de passe doit comporter plus de 3 caractères";
             }
             else
             {
-                reader2.Close();
-                string register = "INSERT INTO members (id,user,password) VALUES ('','" + user.Text + "','" + password.Text + "');";
-                MySqlCommand cmd2 = new MySqlCommand(register, con2);
-                cmd2.ExecuteNonQuery();
-                result.Text = "Votre compte a été créé !";  
-            }
-            reader2.Close();
-        }
+                if (password.Text != passwordconfirmation.Text)
+                {
+                    result.Text = "Les mots de passes ne correspondent pas";
+                }
+                else
+                {
+                    if (reader2.Read())
+                    {
+                        result.Text = "Ce nom d'utilisateur existe déjà";
+                        reader2.Close();
+                    }
+                    else
+                    {
+                        reader2.Close();
+                        string register = "INSERT INTO members (id,user,password) VALUES ('','" + user.Text + "','" + password.Text + "');";
+                        MySqlCommand cmd2 = new MySqlCommand(register, con2);
+                        cmd2.ExecuteNonQuery();
+                        session.createUserLoginSession(user.Text, password.Text);
+                        StartActivity(typeof(SecondRegister));
+                    }
+                    reader2.Close();
+                }
 
+            }
+        }
         private void buttonconnexion_Click(object sender, EventArgs e)
         {
 

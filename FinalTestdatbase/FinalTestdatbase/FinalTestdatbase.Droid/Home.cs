@@ -17,16 +17,13 @@ namespace FinalTestdatbase.Droid
     public class Home : Activity
     {
 
-        private Button openmap;
+        
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.Home);
 
-            openmap = FindViewById<Button>(Resource.Id.openmap);
-
-            openmap.Click += openmap_Click;
         }
 
         private void openmap_Click(object sender, EventArgs e)
@@ -35,5 +32,6 @@ namespace FinalTestdatbase.Droid
             var mapOpen = new Intent(Intent.ActionView, geoloc);
             StartActivity(mapOpen);
         }
+
     }
 }
