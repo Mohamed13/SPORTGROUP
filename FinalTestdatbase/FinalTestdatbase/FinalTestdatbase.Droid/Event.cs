@@ -19,6 +19,7 @@ namespace FinalTestdatbase.Droid
     {
         public TextView textview1, textview2;
         public Button button1;
+        List<Button> tabButton = new List<Button>();
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -29,7 +30,31 @@ namespace FinalTestdatbase.Droid
             textview2 = FindViewById<TextView>(Resource.Id.textView2);
 
             MySqlConnection con = new MySqlConnection("Server=cl1-sql22.phpnet.org;Port=3306;database=yzi38822; User Id=yzi38822;Password=M0kTZX33pyO6;");
+            
+
+            string queryEvenementsTrue = "SELECT * FROM evenements WHERE status='true'";
+            MySqlDataReader reader = new MySqlCommand(queryEvenementsTrue, con).ExecuteReader();
             con.Open();
+            if (reader.Read())
+            {
+                while(reader.Read())
+                {
+                    //int i = 0;
+                    Button button = new Button(Application.Context);
+                    button.Text = reader["nom"].ToString();
+                    button.Click += showEvents(reader["nom"]);
+                    tabButton.Add(button);
+                }
+            }
+            else
+            {
+                textview1.Text = "Aucun évenements disponible, revenez plus tard.";
+            }
+            reader.Close();
+
+            con.Close();
+
+            
 
             //var i = 0;
             //for(i=1; i<=15; i++ ) { 
@@ -39,9 +64,16 @@ namespace FinalTestdatbase.Droid
 
             //    if (reader.Read())
             //    {
-                    
+
             //    }
 
-                }
-            }    
-    }
+        }
+
+        private EventHandler showEvents(object v)
+        {
+            StartActivity(typeof(Event));
+            throw new NotImplementedException();
+        }
+
+    }    
+  }
