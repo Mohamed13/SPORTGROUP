@@ -28,6 +28,7 @@ namespace FinalTestdatbase.Droid
 
             next = FindViewById<Button>(Resource.Id.next);
             session = new UserSessionManagement(Application.Context);
+            
 
             Dictionary<string, string> user = session.getUserDetails();
 
