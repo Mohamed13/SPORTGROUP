@@ -16,7 +16,7 @@ namespace FinalTestdatbase.Droid
     public class Accueil : Activity
     {
 
-        private Button evenement, button1, deconnexion;
+        private Button evenement, button1, deconnexion, map_btn;
         UserSessionManagement session = new UserSessionManagement();
         protected override void OnCreate(Bundle savedInstanceState)
         {
@@ -25,6 +25,7 @@ namespace FinalTestdatbase.Droid
             evenement = FindViewById<Button>(Resource.Id.evenement);
             button1 = FindViewById<Button>(Resource.Id.button1);
             deconnexion = FindViewById<Button>(Resource.Id.deconnexion);
+            map_btn = FindViewById<Button>(Resource.Id.map_btn);
 
             session = new UserSessionManagement(Application.Context);
 
@@ -32,6 +33,12 @@ namespace FinalTestdatbase.Droid
             evenement.Click += Evenement_Click;
             button1.Click += Button1_Click;
             deconnexion.Click += Deconnexion_Click;
+            map_btn.Click += mapbtn_Click;
+        }
+
+        private void mapbtn_Click(object sender, EventArgs e)
+        {
+            StartActivity(typeof(Map));
         }
 
         private void Deconnexion_Click(object sender, EventArgs e)
