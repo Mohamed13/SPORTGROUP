@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using MySql.Data.MySqlClient;
 
 namespace FinalTestdatbase.Droid
 {
@@ -18,13 +19,18 @@ namespace FinalTestdatbase.Droid
         
     {
         private Button next;
+        private EditText mail, mailconfirmation;
 
         UserSessionManagement session = new UserSessionManagement();
+        private string name;
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.SecondRegister);
+
+            mail = FindViewById<EditText>(Resource.Id.mail);
+            mailconfirmation = FindViewById<EditText>(Resource.Id.mailconfirmation);
 
             next = FindViewById<Button>(Resource.Id.next);
             session = new UserSessionManagement(Application.Context);
@@ -37,8 +43,20 @@ namespace FinalTestdatbase.Droid
         }
 
         private void Next_Click(object sender, EventArgs e)
-        {
-            StartActivity(typeof(ThirdRegister));
+        { 
+            if(mail == mailconfirmation)
+            {
+                MySqlConnection con = new MySqlConnection("Server=cl1-sql22.phpnet.org;Port=3306;database=yzi38822; User Id=yzi38822;Password=M0kTZX33pyO6;");
+                con.Open();
+                string register = "UPDATE members SET mail = '" + mail.Text + "' where user = '" + name + "';";
+                MySqlCommand cmd2 = new MySqlCommand(register, con);
+                cmd2.ExecuteNonQuery();
+                StartActivity(typeof(ThirdRegister));
+            } else
+            {
+                
+            }
+            
         }
     }
 }

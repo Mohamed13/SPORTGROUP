@@ -2667,9 +2667,6 @@ namespace FinalTestdatbase.Droid
 			// aapt resource value: 0x7f0a00bc
 			public const int email = 2131361980;
 			
-			// aapt resource value: 0x7f0a00c8
-			public const int emailconfirmation = 2131361992;
-			
 			// aapt resource value: 0x7f0a0027
 			public const int end = 2131361831;
 			
@@ -2756,6 +2753,9 @@ namespace FinalTestdatbase.Droid
 			
 			// aapt resource value: 0x7f0a00c7
 			public const int mail = 2131361991;
+			
+			// aapt resource value: 0x7f0a00c8
+			public const int mailconfirmation = 2131361992;
 			
 			// aapt resource value: 0x7f0a0094
 			public const int map = 2131361940;

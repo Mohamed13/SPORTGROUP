@@ -43,7 +43,6 @@ namespace FinalTestdatbase.Droid
         private void Deconnexion_Click(object sender, EventArgs e)
         {
             session.logoutUser();
-
         }
 
         private void Button1_Click(object sender, EventArgs e)
