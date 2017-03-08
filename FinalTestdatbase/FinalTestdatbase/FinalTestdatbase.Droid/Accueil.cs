@@ -37,7 +37,7 @@ namespace FinalTestdatbase.Droid
 
         private void map_btn_Click(object sender, EventArgs e)
         {
-            StartActivity(typeof(Map));
+            StartActivity(typeof(MapAff));
         }
 
         private void Deconnexion_Click(object sender, EventArgs e)
