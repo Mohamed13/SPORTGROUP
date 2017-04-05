@@ -47,7 +47,7 @@ namespace FinalTestdatbase.Droid
             Dictionary<string, string> user = session.getUserDetails();
 
             string name = user[UserSessionManagement.KEY_NAME];
-            string mail = user[UserSessionManagement.KEY_EMAIL];
+            string password = user[UserSessionManagement.KEY_PASSWORD];
 
 
             MySqlConnection con = new MySqlConnection("Server=cl1-sql22.phpnet.org;Port=3306;database=yzi38822; User Id=yzi38822;Password=M0kTZX33pyO6;");

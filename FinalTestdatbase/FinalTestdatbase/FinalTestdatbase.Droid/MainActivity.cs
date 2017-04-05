@@ -73,7 +73,7 @@ namespace FinalTestdatbase.Droid
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            StartActivity(typeof(Home));
+            StartActivity(typeof(LoginActivity));
         }
     }
 }

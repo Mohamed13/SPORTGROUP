@@ -2673,6 +2673,9 @@ namespace FinalTestdatbase.Droid
 			// aapt resource value: 0x7f0a00ba
 			public const int end_padder = 2131361978;
 			
+			// aapt resource value: 0x7f0a00cb
+			public const int enregistrer = 2131361995;
+			
 			// aapt resource value: 0x7f0a002e
 			public const int enterAlways = 2131361838;
 			

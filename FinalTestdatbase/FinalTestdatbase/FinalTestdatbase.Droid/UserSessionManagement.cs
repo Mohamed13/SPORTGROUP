@@ -31,6 +31,7 @@ namespace FinalTestdatbase.Droid
         private static string IS_USER_LOGIN = "IsUserLoggedIn";
         public static string KEY_NAME = "name";
         public static string KEY_EMAIL = "email";
+        public static string KEY_PASSWORD = "password";
 
         public UserSessionManagement(Context context)
         {
@@ -46,7 +47,7 @@ namespace FinalTestdatbase.Droid
         }
 
         //Create login session
-        public void createUserLoginSession(string name, string email)
+        public void createUserLoginSession(string name, string password)
         {
             // Storing login value as TRUE
             editor.PutBoolean(IS_USER_LOGIN, true);
@@ -55,7 +56,7 @@ namespace FinalTestdatbase.Droid
             editor.PutString(KEY_NAME, name);
 
             // Storing email in pref
-            editor.PutString(KEY_EMAIL, email);
+            editor.PutString(KEY_PASSWORD, password);
 
             // commit changes
             editor.Commit();
@@ -90,10 +91,10 @@ namespace FinalTestdatbase.Droid
         }
 
         public Dictionary<string, string> getUserDetails()
-{
+        {
 
-    //Use hashmap to store user credentials
-    Dictionary<string, string> user = new Dictionary<string, string>();
+            //Use hashmap to store user credentials
+            Dictionary<string, string> user = new Dictionary<string, string>();
 
 
             // user name
@@ -101,6 +102,9 @@ namespace FinalTestdatbase.Droid
 
             // user email id
             user[KEY_EMAIL] = pref.GetString(KEY_EMAIL, null);
+
+            // user password
+            user[KEY_PASSWORD] = pref.GetString(KEY_PASSWORD, null);
     
             // return user
             return user;
