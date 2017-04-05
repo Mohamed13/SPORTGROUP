@@ -127,11 +127,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Accueil.cs" />
+    <Compile Include="DisplayMap.cs" />
     <Compile Include="Event.cs" />
     <Compile Include="EventCreation.cs" />
     <Compile Include="Home.cs" />
     <Compile Include="LoginActivity.cs" />
-    <Compile Include="MapAff.cs" />
     <Compile Include="Profil.cs" />
     <Compile Include="Register.cs" />
     <Compile Include="MainActivity.cs" />
@@ -170,7 +170,7 @@
     <AndroidResource Include="Resources\layout\Event.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\MapAff.axml">
+    <AndroidResource Include="Resources\layout\DisplayMap.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

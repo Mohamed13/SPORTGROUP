@@ -15,8 +15,10 @@ using Android.Gms.Maps.Model;
 namespace FinalTestdatbase.Droid
 {
     [Activity(Label = "Accueil")]
-    public class MapAff : Activity,IOnMapReadyCallback
+    public class DisplayMap : Activity, IOnMapReadyCallback
     {
+        MapFragment _myMapFragment;
+
         public void OnMapReady(GoogleMap googleMap)
         {
             MarkerOptions markerOptions = new MarkerOptions();
@@ -30,10 +32,12 @@ namespace FinalTestdatbase.Droid
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.MapAff);
+            SetContentView(Resource.Layout.DisplayMap);
 
-            MapFragment mapFragment = (MapFragment)FragmentManager.FindFragmentById(Resource.Id.map);
-            mapFragment.GetMapAsync(this);
+            _myMapFragment = MapFragment.NewInstance();
+            FragmentTransaction tx = FragmentManager.BeginTransaction();
+            tx.Add(Resource.Id.map, _myMapFragment);
+            tx.Commit();
         }
     }
 }

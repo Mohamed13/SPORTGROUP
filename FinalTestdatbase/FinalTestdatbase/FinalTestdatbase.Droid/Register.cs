@@ -53,8 +53,8 @@ namespace FinalTestdatbase.Droid
         private void register_Click(object sender, EventArgs e)
         {
 
-            pref = _context.GetSharedPreferences(PREFER_NAME, 0);
-            editor = pref.Edit();
+            // pref = _context.GetSharedPreferences(PREFER_NAME, 0);
+            // editor = pref.Edit();
 
             MySqlConnection con2 = new MySqlConnection("Server=cl1-sql22.phpnet.org;Port=3306;database=yzi38822; User Id=yzi38822;Password=M0kTZX33pyO6;");
 

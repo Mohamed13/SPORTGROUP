@@ -2571,8 +2571,8 @@ namespace FinalTestdatbase.Droid
 			// aapt resource value: 0x7f0a0075
 			public const int button1 = 2131361909;
 			
-			// aapt resource value: 0x7f0a008f
-			public const int button3 = 2131361935;
+			// aapt resource value: 0x7f0a0090
+			public const int button3 = 2131361936;
 			
 			// aapt resource value: 0x7f0a004f
 			public const int buttonPanel = 2131361871;
@@ -2580,8 +2580,8 @@ namespace FinalTestdatbase.Droid
 			// aapt resource value: 0x7f0a00c6
 			public const int buttonconnexion = 2131361990;
 			
-			// aapt resource value: 0x7f0a0092
-			public const int buttonregister = 2131361938;
+			// aapt resource value: 0x7f0a0093
+			public const int buttonregister = 2131361939;
 			
 			// aapt resource value: 0x7f0a00af
 			public const int cancel_action = 2131361967;
@@ -2601,8 +2601,8 @@ namespace FinalTestdatbase.Droid
 			// aapt resource value: 0x7f0a00b5
 			public const int chronometer = 2131361973;
 			
-			// aapt resource value: 0x7f0a0085
-			public const int city = 2131361925;
+			// aapt resource value: 0x7f0a0086
+			public const int city = 2131361926;
 			
 			// aapt resource value: 0x7f0a003e
 			public const int clip_horizontal = 2131361854;
@@ -2613,8 +2613,8 @@ namespace FinalTestdatbase.Droid
 			// aapt resource value: 0x7f0a002a
 			public const int collapseActionView = 2131361834;
 			
-			// aapt resource value: 0x7f0a0089
-			public const int connect = 2131361929;
+			// aapt resource value: 0x7f0a008a
+			public const int connect = 2131361930;
 			
 			// aapt resource value: 0x7f0a0055
 			public const int contentPanel = 2131361877;
@@ -2655,11 +2655,11 @@ namespace FinalTestdatbase.Droid
 			// aapt resource value: 0x7f0a001a
 			public const int disableHome = 2131361818;
 			
-			// aapt resource value: 0x7f0a008c
-			public const int editText1 = 2131361932;
-			
 			// aapt resource value: 0x7f0a008d
-			public const int editText2 = 2131361933;
+			public const int editText1 = 2131361933;
+			
+			// aapt resource value: 0x7f0a008e
+			public const int editText2 = 2131361934;
 			
 			// aapt resource value: 0x7f0a0067
 			public const int edit_query = 2131361895;
@@ -2691,8 +2691,8 @@ namespace FinalTestdatbase.Droid
 			// aapt resource value: 0x7f0a0049
 			public const int expand_activities_button = 2131361865;
 			
-			// aapt resource value: 0x7f0a008b
-			public const int expandableListView1 = 2131361931;
+			// aapt resource value: 0x7f0a008c
+			public const int expandableListView1 = 2131361932;
 			
 			// aapt resource value: 0x7f0a005c
 			public const int expanded_menu = 2131361884;
@@ -2760,8 +2760,8 @@ namespace FinalTestdatbase.Droid
 			// aapt resource value: 0x7f0a00c8
 			public const int mailconfirmation = 2131361992;
 			
-			// aapt resource value: 0x7f0a0094
-			public const int map = 2131361940;
+			// aapt resource value: 0x7f0a0081
+			public const int map = 2131361921;
 			
 			// aapt resource value: 0x7f0a0076
 			public const int map_btn = 2131361910;
@@ -2865,8 +2865,8 @@ namespace FinalTestdatbase.Droid
 			// aapt resource value: 0x7f0a000d
 			public const int normal = 2131361805;
 			
-			// aapt resource value: 0x7f0a0083
-			public const int owner = 2131361923;
+			// aapt resource value: 0x7f0a0084
+			public const int owner = 2131361924;
 			
 			// aapt resource value: 0x7f0a0033
 			public const int parallax = 2131361843;
@@ -2883,8 +2883,8 @@ namespace FinalTestdatbase.Droid
 			// aapt resource value: 0x7f0a0034
 			public const int pin = 2131361844;
 			
-			// aapt resource value: 0x7f0a0093
-			public const int profil = 2131361939;
+			// aapt resource value: 0x7f0a0094
+			public const int profil = 2131361940;
 			
 			// aapt resource value: 0x7f0a0006
 			public const int progress_circular = 2131361798;
@@ -2985,11 +2985,11 @@ namespace FinalTestdatbase.Droid
 			// aapt resource value: 0x7f0a0050
 			public const int spacer = 2131361872;
 			
-			// aapt resource value: 0x7f0a0086
-			public const int spinner = 2131361926;
+			// aapt resource value: 0x7f0a0087
+			public const int spinner = 2131361927;
 			
-			// aapt resource value: 0x7f0a008a
-			public const int spinner1 = 2131361930;
+			// aapt resource value: 0x7f0a008b
+			public const int spinner1 = 2131361931;
 			
 			// aapt resource value: 0x7f0a0008
 			public const int split_action_bar = 2131361800;
@@ -3018,8 +3018,8 @@ namespace FinalTestdatbase.Droid
 			// aapt resource value: 0x7f0a0070
 			public const int submit_area = 2131361904;
 			
-			// aapt resource value: 0x7f0a0087
-			public const int switch1 = 2131361927;
+			// aapt resource value: 0x7f0a0088
+			public const int switch1 = 2131361928;
 			
 			// aapt resource value: 0x7f0a0019
 			public const int tabMode = 2131361817;
@@ -3036,23 +3036,23 @@ namespace FinalTestdatbase.Droid
 			// aapt resource value: 0x7f0a0058
 			public const int textSpacerNoButtons = 2131361880;
 			
-			// aapt resource value: 0x7f0a0081
-			public const int textView1 = 2131361921;
-			
 			// aapt resource value: 0x7f0a0082
-			public const int textView2 = 2131361922;
+			public const int textView1 = 2131361922;
 			
-			// aapt resource value: 0x7f0a0084
-			public const int textView3 = 2131361924;
+			// aapt resource value: 0x7f0a0083
+			public const int textView2 = 2131361923;
 			
-			// aapt resource value: 0x7f0a008e
-			public const int textView4 = 2131361934;
+			// aapt resource value: 0x7f0a0085
+			public const int textView3 = 2131361925;
 			
-			// aapt resource value: 0x7f0a0090
-			public const int textView5 = 2131361936;
+			// aapt resource value: 0x7f0a008f
+			public const int textView4 = 2131361935;
 			
 			// aapt resource value: 0x7f0a0091
-			public const int textView6 = 2131361937;
+			public const int textView5 = 2131361937;
+			
+			// aapt resource value: 0x7f0a0092
+			public const int textView6 = 2131361938;
 			
 			// aapt resource value: 0x7f0a00b4
 			public const int time = 2131361972;
@@ -3081,8 +3081,8 @@ namespace FinalTestdatbase.Droid
 			// aapt resource value: 0x7f0a00c1
 			public const int user = 2131361985;
 			
-			// aapt resource value: 0x7f0a0088
-			public const int valider = 2131361928;
+			// aapt resource value: 0x7f0a0089
+			public const int valider = 2131361929;
 			
 			// aapt resource value: 0x7f0a000a
 			public const int view_offset_helper = 2131361802;
@@ -3295,19 +3295,19 @@ namespace FinalTestdatbase.Droid
 			public const int design_navigation_menu_item = 2130903077;
 			
 			// aapt resource value: 0x7f030026
-			public const int Event = 2130903078;
+			public const int DisplayMap = 2130903078;
 			
 			// aapt resource value: 0x7f030027
-			public const int EventCreation = 2130903079;
+			public const int Event = 2130903079;
 			
 			// aapt resource value: 0x7f030028
-			public const int Home = 2130903080;
+			public const int EventCreation = 2130903080;
 			
 			// aapt resource value: 0x7f030029
-			public const int Main = 2130903081;
+			public const int Home = 2130903081;
 			
 			// aapt resource value: 0x7f03002a
-			public const int MapAff = 2130903082;
+			public const int Main = 2130903082;
 			
 			// aapt resource value: 0x7f03002b
 			public const int mr_chooser_dialog = 2130903083;

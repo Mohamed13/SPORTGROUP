@@ -18,7 +18,7 @@ namespace FinalTestdatbase.Droid
     {
         UserSessionManagement session = new UserSessionManagement();
         private EditText ville, age;
-        private String user;
+        private String user, email, password;
         public Button Enregistrer { get; private set; }
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -41,9 +41,12 @@ namespace FinalTestdatbase.Droid
 
             Dictionary<string, string> user = session.getUserDetails();
             string name = user[UserSessionManagement.KEY_NAME];
+            string email = user[UserSessionManagement.KEY_EMAIL];
+            string password = user[UserSessionManagement.KEY_PASSWORD];
+
             MySqlConnection con = new MySqlConnection("Server=cl1-sql22.phpnet.org;Port=3306;database=yzi38822; User Id=yzi38822;Password=M0kTZX33pyO6;");
             con.Open();
-            string register = "UPDATE members SET city = '" + ville.Text + "' where user = '" + name + "';";
+            string register = "INSERT INTO members (id,user,password,email,city) VALUES ('','" + user + "','" + password + "','" + email + "','" + ville.Text + "');"; ;
             MySqlCommand cmd2 = new MySqlCommand(register, con);
             cmd2.ExecuteNonQuery();
             StartActivity(typeof(ThirdRegister));

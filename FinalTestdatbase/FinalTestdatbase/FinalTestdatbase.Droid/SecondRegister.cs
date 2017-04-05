@@ -65,11 +65,13 @@ namespace FinalTestdatbase.Droid
                 con.Open();
 
                 editor.PutString(KEY_EMAIL, mail.Text);
+                
 
                 // string register = "UPDATE members SET mail = '" + mail.Text + "' where user = '" + name + "';";
                 //MySqlCommand cmd2 = new MySqlCommand(register, con);
                 //cmd2.ExecuteNonQuery();
                 //StartActivity(typeof(ThirdRegister));
+
                 TextView1.Text = name;
 
             } else
